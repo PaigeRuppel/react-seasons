@@ -11,6 +11,9 @@ const seasonConfig = {
     icon: 'snowflake'
   }
 }
+const summer = 'summer';
+const winter = 'winter';
+
 const isSummerMonth = (month) => {
   return month > 2 && month < 9;
 };
@@ -21,9 +24,9 @@ const isNorthernHemisphere = (lat) => {
 
 const season = (lat, month) => {
   if (isSummerMonth(month)) {
-    return isNorthernHemisphere(lat) ? 'summer' : 'winter';
+    return isNorthernHemisphere(lat) ? summer : winter;
   }
-  return isNorthernHemisphere(lat) ? 'winter' : 'summer';
+  return isNorthernHemisphere(lat) ? winter : summer;
 }
 
 const SeasonDisplay = (props) => {
